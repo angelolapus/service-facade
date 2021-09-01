@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "angelolapus-service-facade": {
+      "projectType": "library",
+      "root": "projects/angelolapus-service-facade",
+      "sourceRoot": "projects/angelolapus-service-facade/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/angelolapus-service-facade/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angelolapus-service-facade/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/angelolapus-service-facade/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angelolapus-service-facade/src/test.ts",
+            "tsConfig": "projects/angelolapus-service-facade/tsconfig.spec.json",
+            "karmaConfig": "projects/angelolapus-service-facade/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "service-facade"

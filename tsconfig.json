@@ -2,6 +2,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "angelolapus-service-facade": [
+        "dist/angelolapus-service-facade/angelolapus-service-facade",
+        "dist/angelolapus-service-facade"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
