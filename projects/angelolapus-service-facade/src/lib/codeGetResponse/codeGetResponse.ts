@@ -1,12 +1,13 @@
-import { Observable, Subject } from "rxjs";
+import { Observable, Subject, Subscription } from "rxjs";
 
 export class CodeGetResponse<T>{
 
-  private _data:any;
-  private _error:any;
+  _data:any;
+  _error:any;
+  // _subscription = new Subscription();
+  dataSubject = new Subject<T>();
+  errorSubject = new Subject<T>();
 
-  private dataSubject = new Subject<T>();
-  private errorSubject = new Subject<T>();
   constructor(){
   }
 
@@ -26,5 +27,9 @@ export class CodeGetResponse<T>{
   setError(error:any){
     this._error = 'error from server' + error;
     this.errorSubject.next(this._error);
+  }
+
+  clear(){
+    this._data = null;
   }
 }
