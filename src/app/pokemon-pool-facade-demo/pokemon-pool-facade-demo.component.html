@@ -1,0 +1,6 @@
+<p>pokemon pool facade</p>
+<button (click)="getAllPokemon()">Get all pokemon</button>
+
+<div *ngFor="let pokemon of pokemons; index as i">
+  <h4>{{i + 1 }}. {{pokemon.name}}</h4>
+</div>

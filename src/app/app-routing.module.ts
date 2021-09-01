@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'pokemonPoolFacadeDemo',
+    loadChildren: () => import('./pokemon-pool-facade-demo/pokemon-pool-facade-demo.module')
+    .then(m => m.PokemonPoolFacadeDemoModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
